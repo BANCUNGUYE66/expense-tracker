@@ -4,6 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { TransactionProvider } from './contexts/TransactionContext'; // Import the provider
 import theme from './theme';
 import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
@@ -16,17 +17,19 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/transactions" element={<Transactions />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/budget" element={<Budget />} />
-            <Route path="/reports" element={<Reports />} />
-          </Routes>
-        </Layout>
-      </Router>
+      <TransactionProvider> {/* Wrap the application with the provider */}
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/transactions" element={<Transactions />} />
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/budget" element={<Budget />} />
+              <Route path="/reports" element={<Reports />} />
+            </Routes>
+          </Layout>
+        </Router>
+      </TransactionProvider>
       <ToastContainer />
     </ThemeProvider>
   );
