@@ -7,6 +7,7 @@ import {
   Assessment as ReportsIcon,
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import NotificationBell from './NotificationBell';
 
 const drawerWidth = 240;
 
@@ -25,9 +26,10 @@ function Layout({ children }) {
     <Box sx={{ display: 'flex' }}>
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             Expense Tracker
           </Typography>
+          <NotificationBell />
         </Toolbar>
       </AppBar>
       <Drawer

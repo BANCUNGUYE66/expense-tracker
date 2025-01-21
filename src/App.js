@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { TransactionProvider } from './contexts/TransactionContext'; // Import the provider
 import { CategoryProvider } from './contexts/CategoryContext';
 import { BudgetProvider } from './contexts/BudgetContext';
+import { NotificationProvider } from './contexts/NotificationContext';
 import theme from './theme';
 import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
@@ -19,23 +20,25 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <TransactionProvider>
-        <CategoryProvider>
-          <BudgetProvider>
-            <Router>
-              <Layout>
-                <Routes>
-                  <Route path="/" element={<Dashboard />} />
-                  <Route path="/transactions" element={<Transactions />} />
-                  <Route path="/categories" element={<Categories />} />
-                  <Route path="/budget" element={<Budget />} />
-                  <Route path="/reports" element={<Reports />} />
-                </Routes>
-              </Layout>
-            </Router>
-          </BudgetProvider>
-        </CategoryProvider>
-      </TransactionProvider>
+      <NotificationProvider>
+        <TransactionProvider>
+          <CategoryProvider>
+            <BudgetProvider>
+              <Router>
+                <Layout>
+                  <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/transactions" element={<Transactions />} />
+                    <Route path="/categories" element={<Categories />} />
+                    <Route path="/budget" element={<Budget />} />
+                    <Route path="/reports" element={<Reports />} />
+                  </Routes>
+                </Layout>
+              </Router>
+            </BudgetProvider>
+          </CategoryProvider>
+        </TransactionProvider>
+      </NotificationProvider>
       <ToastContainer />
     </ThemeProvider>
   );
