@@ -150,7 +150,7 @@ This will create a `build` directory with production-ready files.
 
 ## 🌐 Live Demo
 
-Access the live demo at: [Expense Tracker Demo](https://your-demo-link.com)
+Access the live demo at: [Expense Tracker Demo](https://678ff43014c3ad4688a69327--boisterous-cobbler-0a1d6a.netlify.app/)
 
 ## 📝 Future Enhancements
 

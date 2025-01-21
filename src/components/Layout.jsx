@@ -1,4 +1,14 @@
-import { Box, Drawer, List, ListItem, ListItemIcon, ListItemText, AppBar, Toolbar, Typography, IconButton } from '@mui/material';
+import {
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  AppBar,
+  Toolbar,
+  Typography
+} from '@mui/material';
 import {
   Dashboard as DashboardIcon,
   Receipt as TransactionsIcon,
